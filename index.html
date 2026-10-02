@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Claude Minesweeper</title>
+  <meta name="description" content="Retro minesweeper built around Claude. Works offline.">
+  <meta name="theme-color" content="#0b0604">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Installed on the iPhone home screen: full screen, no Safari bars -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Minesweeper">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preload" href="assets/fonts/ClaudePixel.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <nav id="menubar">
+      <button class="menu-title" data-menu="game">Game</button>
+      <button class="menu-title" data-menu="options">Options</button>
+      <button class="menu-title" data-menu="help">Help</button>
+      <span id="menubar-icon" aria-hidden="true"></span>
+    </nav>
+    <div id="header-wrap"><canvas id="header" aria-label="Mine counter, new game button and timer"></canvas></div>
+    <div id="board-wrap"><canvas id="board" aria-label="Minefield"></canvas></div>
+    <div id="toolbar">
+      <div id="mode" role="radiogroup" aria-label="Tap action">
+        <button id="mode-dig" role="radio" data-mode="dig"><span class="icon" id="icon-dig"></span>DIG</button>
+        <button id="mode-flag" role="radio" data-mode="flag"><span class="icon" id="icon-flag"></span>FLAG</button>
+      </div>
+      <button id="fit" class="tool" aria-label="Zoom to fit">FIT</button>
+    </div>
+  </div>
+
+  <div id="menu-layer" hidden>
+    <div id="menu-panel" role="menu"></div>
+  </div>
+  <div id="dialog-layer" hidden></div>
+  <div id="crt" aria-hidden="true"></div>
+  <canvas id="splash" hidden></canvas>
+
+  <noscript><p style="color:#ffb35c;padding:24px">Claude Minesweeper needs JavaScript.</p></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
